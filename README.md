@@ -118,9 +118,6 @@ Applied during the verified run on this tablet:
 
     debloat.ps1                    Windows/PowerShell script (primary)
     debloat.sh                     bash twin, same tiers and guard
-    docs/DEVICE-NOTES.md           SM-T510 findings: package deltas, self-healing evidence, measurements
-    examples/packages-baseline-328.txt   the pre-debloat dump this repo's tiers were built from
-    examples/restore-20260926.ps1  a real generated undo file (71 packages)
     test/adb.cmd                   stub adb for testing the PowerShell script with no device
     test/fakeadb                   stub adb for testing the bash script with no device
 
