@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# stub adb - offline testing for debloat.sh, no device needed.
+# The package list mirrors the packages the tier globals actually name:
+#   tier1 dqagent, sec.factory, dsi.ant.server, microsoft.skydrive
+#   tier2 appsedge, scloud, game.gos (self-healing)
+#   tier3 google.android.youtube   protected: launcher, vending, gms
+case "$1" in
+  devices) printf 'List of devices attached\nABC123\tdevice\n' ;;
+  version) printf 'Android Debug Bridge version 1.0.41\nVersion 37.0.1\n' ;;
+  get-state) printf 'device\n' ;;
+  reb*) echo "[fake] power-cycle requested" ;;
+  shell)
+    shift
+    case "$1" in
+      getprop) echo "fake-value" ;;
+      am) echo "40" ;;
+      cmd) echo "Package installed" ;;
+      pm)
+        case "$2" in
+          list) printf 'package:com.samsung.android.dqagent\npackage:com.sec.factory\npackage:com.dsi.ant.server\npackage:com.microsoft.skydrive\npackage:com.samsung.android.app.appsedge\npackage:com.samsung.android.scloud\npackage:com.samsung.android.game.gos\npackage:com.google.android.youtube\npackage:com.sec.android.app.launcher\npackage:com.android.vending\npackage:com.google.android.gms\n' ;;
+          uninstall) echo "Success" ;;
+          enable) echo "Package enabled" ;;
+          disable-user) echo "new state: disabled" ;;
+        esac ;;
+    esac ;;
+esac
