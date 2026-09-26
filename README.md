@@ -1,5 +1,4 @@
-Tiered, reversible ADB debloat for Samsung tablets/phones, written for and verified on a
-**Galaxy Tab A 10.1 (2019) SM-T510** running Android 11 / One UI Core 3.1.
+Tiered, reversible ADB debloat for Samsung **Galaxy Tab A 10.1 (2019) SM-T510** running Android 11 / One UI Core 3.1.
 
 No root. No bootloader unlock. No custom recovery. Removed packages stay in `/system`, so every
 change is undone with `cmd package install-existing`.
