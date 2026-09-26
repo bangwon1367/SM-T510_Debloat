@@ -143,11 +143,10 @@ The stubs answer `devices`, `version`, `get-state`, `shell pm list packages`, `s
 
 - Package names are Samsung/vendor internals; they change between One UI versions. Re-`dump` and
   re-`list` after any firmware change.
-- Tier lists here are tuned for a Wi-Fi-only tablet (no SIM). On a phone, keep the telephony/IMS
-  entries - they are protected in the scripts for that reason.
+- Tier lists here are tuned for a Wi-Fi-only tablet (no SIM).
 - No pre-debloat idle-RAM baseline was captured, so this repo makes no perf claim. What is verified is
   the package delta and that removals survive a reboot. Measure your own before/after, e.g.
   `adb shell dumpsys meminfo | grep -E "Total RAM|Free RAM|Used RAM|ZRAM"`.
 - This method does not unlock the bootloader or trip Knox. Anything that does (TWRP/LineageOS) is a
   different trade-off entirely.
-- No license file included yet - add one before publishing.
+- No license file included - Permissive, i guess
